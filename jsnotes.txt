@@ -1,0 +1,233 @@
+//"use strict";  if we write this line in the start then strict mode is 
+// enables to code in rule-wise way or to stay away from bugs that might come
+
+
+/*
+1. Javascipt is interpreted
+2. ES(ECMA script is nothing but defines version of javascript )
+such as ES11,ES12,ES13 and so on
+3. It is the programming language of the web
+   We use Node.js to enable javascript to run on server-end 
+   
+*/
+
+/* 
+alert("some text"); --> to display a pop-up box with the message within
+prompt("Enter your text"); --> to take input with the pop-up box
+console.log();   --> to display result in the console 
+*/
+
+
+/*
+
+To add js in our code -->
+
+1) <<Inline js>>
+done with the help of onload attribute
+ex-->
+    <body onload="alert("Hello");">
+
+2) << internal js >>
+done with the help of script tag
+<script>
+//js code
+</script>
+you can place it in head or body or both
+3) << external js >>
+
+<body>
+..
+..
+<script src="file.js"></script> // to be placed at bottom
+</body>
+
+why bottom ?
+
+because we want our structure and styles to load and not the logic
+
+*/
+
+/* 
+        Data types 
+ Number ( int,float,double)
+ String
+ Boolean 
+ Undefined
+ 
+ different declarations -->
+ var --> global scope and can be redeclared
+ let  --> block scope and can't be redeclared
+ const  --> requires initialization and can't be redeclared
+*/
+
+
+/*
+arithmetic operators-->
+Comparison operators --> 
+=== --> compares data type
+!== --> is not equal to
+==  --> not compares data type
+>, <, >=, <=
+&& --> and
+|| --> or
+var a = 10;
+var b  = "10";
+alert(a===b); --> False
+alert(a==b); --> True
+*/
+
+
+let str1= "Hello";
+alert(str1)
+alert(str1.length);
+
+alert(str1.slice(2,5));
+
+/*
+to enable  user to only let him enter a text with 100 words
+var para=prompt("Enter your words:");
+var slicedPara = para.slice(0,100);
+*/
+
+var str2="biLlu"
+alert(str2.toUpperCase()); //BILLU
+alert(str2.toLowerCase()); // billu
+
+//Functions
+//we use function keyword yo declare a function 
+
+function disp()     // function declaration
+{
+    alert("hello");
+}
+
+disp();   //fucntion calling
+
+//Another way of doing this
+let displayer = function()
+{
+    return 100;
+}
+alert(displayer());
+
+let a=10;
+let b= 20;
+function adder(a,b)
+{
+    return a+b;
+}
+
+alert("the sum of a and b is "+adder(a,b));
+
+// arrow functions/anonymous or lambda functions
+// we use this function when the statement requires only one line 
+//to make things more readable
+let myfunc= ()=> {
+    alert("hello bhaiya mei alert function");
+}
+myfunc();
+
+let summer = (a,b)=> a+b; //where a+b is equal to return a+b in arrow function
+alert(summer(100,200));
+//Math library 
+
+let num= Math.random(); 
+// generates a random float number between 0 to 0.999..... 
+alert(num);
+
+alert(Math.floor(num)); //gives 0 coz it floors it to 0 decimal places
+
+//you want to generate a number between 0 to 5
+let num1=Math.floor(((Math.random())*5)+1);
+/* 
+why plus 1 ?
+--> because if you multiply a number with a 0. decimal you will get a number 
+always less than that thats why to include that number in the range too
+we add 1 
+*/
+alert(num1);
+
+// IF - Else statements
+
+var x=10;
+var y =10;
+if (x===y)
+{
+    alert("True");
+}
+else
+{
+    alert("false");
+}
+
+//Arrays 
+var arr =[10,20,30];
+var arr1 =["Billu","Tiku",2000];
+
+alert(arr.length); //3
+alert(arr.includes(20)); //True
+
+arr.pop(); // removes last item
+arr.push(40); // adds new item to the last
+alert(arr);
+
+//Loops
+
+//While loop
+
+var i =1;
+
+while(i < 10)
+{
+    alert(i);
+    i=i+1;
+}
+
+//For loop
+
+for(i=0; i<10;i++)
+{
+    alert(i);
+}
+
+//For each loop 
+// Calls a function for each items of the array
+
+var arr =[2,4,6];
+
+arr.forEach(disp);
+
+function disp(item){
+    
+    alert(item*item);
+};
+
+
+// Objects in javascript
+
+// we use const keyword to create an object in js
+// unlike other programming languages here in js we see that we can create 
+// an object even without a class
+const obj1={
+    name:"Billu",
+    age:21,
+    type:"Dog",
+    myfunction: function(){
+        alert("this is obj1 function");
+    }
+};
+
+alert(obj1);
+alert(obj1.type); //Dog
+obj1.myfunction();
+
+//Window object --> automatically created by the browser and the 'this'
+//refers to it if no current object it is referring to
+
+
+
+
+
+
+
+
