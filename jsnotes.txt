@@ -224,6 +224,27 @@ obj1.myfunction();
 //Window object --> automatically created by the browser and the 'this'
 //refers to it if no current object it is referring to
 
+//Using "new" keyword to create objects but the object is created from a class
+
+class Animals 
+{
+    constructor(type,age)
+    {
+        this.type=type;
+        this.age=age;
+    }
+}
+
+const obj1 = new Animals("Dog",24);
+
+alert(obj1.type);
+
+//using built-in classes such as date
+
+const dateObj = new Date();
+alert(dateObj.getDate());
+alert(dateObj.FullYear());
+
 
 
 
