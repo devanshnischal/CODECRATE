@@ -1,3 +1,5 @@
+                                                      PART A
+
 /*
 React is a javascript library that is developed by Facebook
 and it used to create fast user-interfaces by using components.
@@ -41,12 +43,7 @@ div container having the id as "root"
 */
 
 
-
-
-
-
-
-
+                                                         PART B
 
 // var React = require("react");
 // var ReactDom = require("react-dom"); old way
@@ -88,6 +85,9 @@ and not the js statements such as if-else or for loops
 //     </div>,document.getElementById("root")
 // );
 
+
+                                                               PART C
+
 //creating components using function which returns html tag
 //component name should always start with capital letter
 // function Heading()
@@ -99,6 +99,10 @@ and not the js statements such as if-else or for loops
 //  <Heading></Heading>  // or <Heading />
 //  , document.getElementById("root")
 // );
+
+
+                                                            PART D
+
 
 // Since we need our index.js to be less complex
 // we can create a separate Heading.jsx file which will export Heading
@@ -142,6 +146,8 @@ export default Para;
 // );
 
 
+                                                               PART E
+
 
 //****Important******* */
 //Here it must be concluded that again importing these components and using
@@ -170,3 +176,17 @@ function App()
 
 export default App;
 */
+
+
+                                                         PART F
+
+
+
+
+
+
+
+
+
+
+
