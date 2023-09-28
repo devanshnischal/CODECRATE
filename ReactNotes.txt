@@ -1,0 +1,172 @@
+/*
+React is a javascript library that is developed by Facebook
+and it used to create fast user-interfaces by using components.
+
+Basic react Packagaes --> react , react-dom
+
+How react works -->
+
+1) we have two basic folders -->
+public --> index.html , styles.css
+src--> index.js, App.jsx , (other jsx files)
+
+2) Difference between js and jsx
+   jsx is given by react and it is an extension of js which enables
+   us to write html code inside js file ( html code is compiled to js code by babel compiler)
+    and also js expressions inside html tags using {} parenthesis
+NOTE-->
+there is no such big difference between js and jsx
+simply, js works like jsx if you import react package in it
+
+3)   Component is nothing but a function which returns html tags
+
+We create multiple jsx files which exports components that are 
+  imported inside App.jsx file 
+  This App.jsx file exports it's App component to index.js file
+
+4) inside index.js,
+  we have a
+
+   ReactDOM.render(   
+  <App />,    //only allows one component
+  document.getElementById("root"); // the App component is injected inside index.html file
+)
+
+5) Finally, the result is shown in index.html file in  its 
+div container having the id as "root"
+
+<div id="root"></div>
+<script src="../src/index.js" type="text/JSX"></script>
+//we change the type of index.js file avoid errors
+*/
+
+
+
+
+
+
+
+
+
+// var React = require("react");
+// var ReactDom = require("react-dom"); old way
+
+//new way
+import React from "react";
+import ReactDOM from "react-dom";
+
+// var num = Math.floor((Math.random()*5)+1)
+
+/*
+
+the JSX technology provided with the react package 
+enables us to
+1) write html code inside js file with the help of babel compiler
+2) write js code inside html tags using {} brackets
+NOTE --> you can only write js expressions inside these brackets
+and not the js statements such as if-else or for loops
+
+*/
+
+
+
+// ReactDOM.render(
+//   <div>    //writing html code inside js file
+// <h1> Your lucky number is {num}</h1> // writing js code inside html tag
+//   </div>
+//   ,document.getElementById("root"));
+
+
+// 
+// var name ="devansh";
+// const dateObj = new Date();
+// var copyright = dateObj.getFullYear();
+// ReactDOM.render(
+//   <div>
+//       <p>{name}</p>
+//       <p>P{copyright}</p>
+//     </div>,document.getElementById("root")
+// );
+
+//creating components using function which returns html tag
+//component name should always start with capital letter
+// function Heading()
+// {
+//   return <h1>Hello</h1>
+// }
+
+// ReactDOM.render(
+//  <Heading></Heading>  // or <Heading />
+//  , document.getElementById("root")
+// );
+
+// Since we need our index.js to be less complex
+// we can create a separate Heading.jsx file which will export Heading
+//component that can be imported in the index.js file
+// by using import and export keywords
+
+// import Heading from "./Heading.jsx";
+// import Para from "./Para.jsx";
+
+//Inside of Heading.jsx
+/*
+
+import React from "react";
+
+function Heading()
+{
+  return <h1>Introduction</h1>
+}
+
+export default Heading;
+
+*/ 
+
+/*
+import React from "react";
+
+function Para()
+{
+  return <p>Hello mei hun paragraph</p>
+}
+
+export default Para;
+*/
+
+// ReactDOM.render(
+//   <div>
+//   <Heading />
+//   <Para />
+//   </div>,
+//   document.getElementById("root")
+// );
+
+
+
+//****Important******* */
+//Here it must be concluded that again importing these components and using
+//them in a index.js file can make it complex if there are multiple components
+// we use App.jsx file in which we import these components from other jsx files
+// and simply we just import the App component in our index.js file
+//  import App from "./App";
+
+// ReactDOM.render(
+//   <App />,
+//   document.getElementById("root")
+// );
+
+/* Inside App.jsx
+import React from "react";
+import Para from "./Para";
+import Heading from "./Heading";
+
+function App()
+{
+  return <div>
+    <Heading />
+    <Para />
+    </div>
+}
+
+export default App;
+*/
