@@ -1,0 +1,106 @@
+function customRender(reactElement,container)
+{
+    // const domElement = document.createElement(reactElement.type)
+    // domElement.innerHTML = reactElement.children
+    // domElement.setAttribute('href',reactElement.props.href)
+    // domElement.setAttribute('target',reactElement.props.target)
+    // container.appendChild(domElement)
+
+    const domElement = document.createElement(reactElement.type);
+    domElement.innerHTML = reactElement.children;
+
+    for (prop in reactElement.props) 
+    {
+        // if (prop == 'children') continue; this was used in early times if children was also 
+        // included in the props 
+        domElement.setAttribute(prop,reactElement.props[prop]);
+    }
+    
+    container.appendChid(domElement);
+}
+
+const reactElement = {
+    type: "a",
+    props:{
+        href: 'https://google.com',
+        target:"_blank"
+    },
+    children :'click me to visit google'
+
+}
+
+
+
+customRender(reactElement,mainContainer)
+const mainContainer = document.querySelector("#root");
+
+
+/* 
+------------------------ADDITIONAL KNOWLEDGE-------------
+
+This is how a react element behind the scenes looks like
+ It means that the babel compiler, compiles the compenent such as 
+ <MyComponent /> into a javascript code that we have written
+
+ ------Question---------
+ can we write the object name MyComponent inside the render method instead of
+ <MyComponent /> if we go by this logic of compilation ?
+ ex-->
+ root.render(
+    Mycomponent
+ )
+ True !!!!
+ But here is a twist, the render method expects to take a component in a valid format specified
+ by the react, so to do this thing
+ you have to create the component using React create element function
+ -->
+ const MyComponent = React.createElement(
+    "a",
+    {href:"https://google.com",target:"_blank"},
+    "click me"
+    myname
+ )
+
+ Now,it will work bcoz we have done things in a valid way
+ root.render(
+    MyComponent 
+ )
+
+ Note-->
+ Suppose, that in MyComponent you are introducing some variables ex= const myname="hello"
+ so, these variables will simply get stored in the element
+ */
+
+
+
+
+
+
+
+ /* 
+what is happening ?
+Here we are seeing that how can we build our own custom react library or react kese hota h
+
+1. We create a reactElement object and we specify its attributes
+such as type (is it h1 or p or a tag ,etc)
+props(properties or tag attributes)
+and then a children --> which is its inner html
+
+2. we specify where we wanna render our code to so we select id of root
+
+3. Now, since the specifications of an element are done which in our case is an a tag
+we will send this element to a custom function having two parameters
+--> reactElement, container (in which we wanna inject our element to)
+
+    In the function,
+
+    a) create a domElement object and use document.createElement to create the component
+    b) after creating element , we will set its innerHTML ( children of element) 
+    c) set its attributes
+    d) Finally, pass this domElement to the container
+
+
+4. Problem with the code --> Things can go hectic if the props are so much
+   Solution --> use a loop for the props
+
+ */
