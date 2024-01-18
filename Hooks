@@ -1,0 +1,70 @@
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
+
+function App()
+ {
+  // state of a component is nothing but values or data belonging to the component
+  //Using useState to change the state or to propagate the state in the UI
+   let [counter,setCounter] = useState(15) 
+  /* 
+   we are storing  15 as an default value in the counter varible
+   we store this using an array having two things:
+   1) state name
+   2) a function to set the value of the state ( name can be anything)
+   Finally, the state will be changed everywhere in the page where it is specified
+   **Benefit**
+   We don't need to use id selector to individually go to each element to change the state
+  */
+
+    // let counter =5;  no need of this anymore
+
+  const addValue =() =>
+  {
+    console.log(counter);
+    counter = counter + 1
+    setCounter(counter) //using setCounter function after the value of the state is updated
+  }
+
+  const reduceValue =() =>
+  {
+    counter=counter-1;
+    setCounter(counter)
+  }
+
+  return (
+    <>
+      <h1 >Counter Project</h1>
+      <h2>Counter Value : {counter}</h2>
+      <button onClick={addValue}>Add Value</button>
+      <br />
+      <br />
+      <button onClick={reduceValue}>Remove Value</button>
+    </>
+  )
+}
+
+export default App
+
+
+/*
+------------------------HOOKS concept -----------------------------
+what is happening ?
+
+-->We are creating a simple project in which the counter value is
+ increased or decreased using buttons
+
+1. Problem A
+On clicking the Add value button the counter is increasing in the code 
+the result can be console log to check
+But the effect is not showing in the UI
+
+REACT says that to 'update' the 'data' in UI you will use methods known as 'hooks'.
+
+Types of hooks =>> useState,useEffect,useContext,useCallback,etc.
+
+
+
+
+*/
